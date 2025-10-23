@@ -12,11 +12,6 @@ const Index = () => {
   const [loading, setLoading] = useState(false);
 
   const validarSenha = async () => {
-    if (!senha.trim()) {
-      setResultado({ valida: false, erros: ["Digite uma senha para validar"] });
-      return;
-    }
-
     setLoading(true);
     setResultado(null);
 
