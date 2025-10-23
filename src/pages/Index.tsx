@@ -161,16 +161,41 @@ const Index = () => {
             <CardTitle className="text-lg">Endpoint API</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm">
                 <span className="font-mono bg-secondary px-2 py-1 rounded text-primary">POST</span>
                 <code className="text-xs bg-secondary/50 px-3 py-1 rounded">/validar-senha</code>
               </div>
+              
               <div className="text-sm space-y-2">
                 <p className="text-muted-foreground">Exemplo de requisição:</p>
                 <pre className="bg-secondary/50 p-3 rounded-lg overflow-x-auto text-xs">
                   <code>{`{
   "senha": "SuaSenha123!"
+}`}</code>
+                </pre>
+              </div>
+
+              <div className="text-sm space-y-2">
+                <p className="text-muted-foreground">Resposta (senha inválida):</p>
+                <pre className="bg-secondary/50 p-3 rounded-lg overflow-x-auto text-xs">
+                  <code>{`{
+  "valida": false,
+  "erros": [
+    "A senha deve ter no mínimo 8 caracteres",
+    "A senha deve conter pelo menos uma letra maiúscula",
+    "A senha deve conter pelo menos um número",
+    "A senha deve conter pelo menos um símbolo especial (!@#$%^&*()_+-=[]{};\':"|,.<>/?)"
+  ]
+}`}</code>
+                </pre>
+              </div>
+
+              <div className="text-sm space-y-2">
+                <p className="text-muted-foreground">Senha válida:</p>
+                <pre className="bg-secondary/50 p-3 rounded-lg overflow-x-auto text-xs">
+                  <code>{`{
+  "valida": true
 }`}</code>
                 </pre>
               </div>
